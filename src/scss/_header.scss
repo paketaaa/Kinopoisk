@@ -1,0 +1,54 @@
+.header{
+   position: relative;
+   padding-top: 18px;
+   padding-bottom: 24px;
+   &__burger{
+      display: inline-block;
+      position: absolute;
+      cursor: pointer;
+      
+      left: 36px;
+      top: 35px;
+
+      width: 20px;
+      height: 16px;
+      padding: 2px;
+
+      background: transparent;
+      border: none;
+
+      span{
+         transition: all 0.3s ease;
+         display: block;
+         position: absolute;
+         width: 18px;
+         height: 1px;
+         outline: 1px solid #000;
+
+         left: 0;
+
+         &:nth-child(1){
+            top: 0;
+         }
+
+         &:nth-child(2){
+            top: 7px;
+         }
+
+         &:nth-child(3){
+            top: 15px;
+         }
+      }
+
+      &:hover{
+         span{
+            outline-color: #cd931b;
+         }
+      }
+   }
+
+   &-container{
+      @include flb-cc;
+   }
+
+}

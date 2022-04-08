@@ -1,0 +1,109 @@
+.main-swiper {
+   position: relative;
+   margin: auto;
+   padding-right: 187px;
+   padding-left: 187px;
+
+   &::before {
+      display: block;
+      content: url("../../public/img/cloud-big.png");
+      position: absolute;
+      bottom: 0;
+      left: -100px;
+      bottom: -380px;
+      pointer-events: none;
+      z-index: 1;
+   }
+
+   &__button {
+      position: absolute;
+      top: calc(50% - 12px);
+      transform: translateY(-50%);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid #000;
+
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 10;
+
+      &--prev {
+         left: 275px;
+         svg {
+            transform: rotate(180deg);
+         }
+      }
+
+      &--next {
+         right: 275px;
+      }
+
+      &:hover {
+         border-color: #cd931b;
+
+         svg {
+            path {
+               transition: all 0.3s ease;
+               stroke: #cd931b;
+            }
+         }
+      }
+   }
+}
+
+.slide {
+
+   &__image {
+      position: relative;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: -265px;
+      left: -25px;
+      bottom: 4px;
+
+      clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+
+   }
+
+   &__text {
+      font-size: 20px;
+      line-height: 32px;
+      letter-spacing: 0.04px;
+      font-weight: 300;
+      width: 100%;
+      max-width: 902px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 18.5px;
+      letter-spacing: 0.4px;
+   }
+}
+
+@media (max-width: 1199px) {
+   // 1199px
+   .slide {
+      &__text {
+         font-size: 18px;
+         line-height: 28px;
+      }
+   }
+
+   .main-swiper{
+      &__button{
+         &--next{
+            right: 180px;
+         }
+
+         &--prev{
+            left: 180px;
+         }
+      }
+   }
+}
